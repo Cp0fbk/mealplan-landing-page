@@ -1,4 +1,4 @@
-import { Calendar, ShoppingCart, Package, Activity } from 'lucide-react';
+import { Calendar, ShoppingCart, Refrigerator, PieChart} from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
@@ -7,25 +7,25 @@ const features = [
   {
     icon: Calendar,
     title: 'Smart Planning, Zero Stress',
-    description: 'Auto-suggests recipes based on goals and pantry. Customize weekly plans to keep calories in check.',
+    description: 'Automatically suggests recipes based on your nutritional goals, taste, and current pantry stock. Easily customize your weekly menu and control your overall calorie & macro intake.',
     gradient: 'from-orange-400 to-pink-500'
   },
   {
     icon: ShoppingCart,
     title: 'Efficient Shopping, Zero Waste',
-    description: 'Auto-generates lists, excluding items you own to save time and cost.',
+    description: 'Automatically aggregates ingredients from your meal plan. The app intelligently filters out items you already have in stock, saving you both money and shopping time',
     gradient: 'from-blue-400 to-cyan-500'
   },
   {
-    icon: Package,
+    icon: Refrigerator,
     title: 'Maximize Usage, Minimize Waste',
-    description: 'Track expiry dates and prioritize recipes using soon-to-expire ingredients.',
+    description: 'Tracks inventory quantities and expiration dates. MealPal prioritizes recipes that use up ingredients about to expire to effectively minimize food waste.',
     gradient: 'from-green-400 to-emerald-500'
   },
   {
-    icon: Activity,
+    icon: PieChart,
     title: 'Master Your Macros',
-    description: 'Monitor intake with real-time calculations and visual charts.',
+    description: 'Automatically calculates energy intake based on actual consumption. Receive visual charts and adjustment suggestions to consistently hit your health goals',
     gradient: 'from-purple-400 to-pink-500'
   }
 ];

@@ -35,16 +35,28 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center gap-8">
           <button
+            onClick={() => scrollToSection('benefits')}
+            className="text-[#363636] font-semibold hover:text-[#E56810] transition-colors"
+          >
+            Why MealPal
+          </button>
+          <button
             onClick={() => scrollToSection('features')}
             className="text-[#363636] font-semibold hover:text-[#E56810] transition-colors"
           >
             Features
           </button>
           <button
-            onClick={() => scrollToSection('benefits')}
+            onClick={() => scrollToSection('how-it-works')}
             className="text-[#363636] font-semibold hover:text-[#E56810] transition-colors"
           >
-            Why MealPal
+            How It Works
+          </button>
+          <button
+            onClick={() => scrollToSection('faq')}
+            className="text-[#363636] font-semibold hover:text-[#E56810] transition-colors"
+          >
+            FAQ
           </button>
           <motion.a
             href="#download"

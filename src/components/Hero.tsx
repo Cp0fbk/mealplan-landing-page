@@ -23,13 +23,13 @@ export default function Hero() {
           </motion.div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-[#363636] leading-tight mb-6">
-            MealPal
-            <span className="block text-[#E56810]">Your Personal</span>
-            <span className="block">Smart Nutrition Assistant</span>
+            Cook better with 
+            <span className="block text-[#E56810]">MealPal.</span>
+            {/* <span className="block">Smart Nutrition Assistant</span> */}
           </h1>
 
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-            Plan meals, track macros, and reduce food waste with AI-powered suggestions. Built for a healthier you.
+            Smart meal planning for busy people. Stop worrying about “What to eat today?”. Eat smart, plan better, and live healthier.
           </p>
 
           <motion.a
