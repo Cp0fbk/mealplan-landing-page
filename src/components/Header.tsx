@@ -59,7 +59,7 @@ export default function Header() {
             FAQ
           </button>
           <motion.a
-            href="#download"
+            href="https://drive.google.com/file/d/1XjDnJSF9b4ShYvpt9IQK2mmVZapq_h7C/view?usp=sharing"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-[#E56810] text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 shadow-lg hover:shadow-xl transition-shadow"
@@ -70,7 +70,7 @@ export default function Header() {
         </nav>
 
         <motion.a
-          href="#download"
+          href="https://drive.google.com/file/d/1XjDnJSF9b4ShYvpt9IQK2mmVZapq_h7C/view?usp=sharing"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="md:hidden bg-[#E56810] text-white px-5 py-2.5 rounded-full font-bold flex items-center gap-2 shadow-lg text-sm"

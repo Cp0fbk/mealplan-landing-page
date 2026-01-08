@@ -25,7 +25,7 @@ const Footer = ({ isVisible }: FooterProps) => {
               Join us who have changed the way we cook with MealPal
             </p>
             <a
-              href="#download"
+              href="https://drive.google.com/file/d/1XjDnJSF9b4ShYvpt9IQK2mmVZapq_h7C/view?usp=sharing"
               className="inline-flex items-center space-x-2 md:space-x-3 bg-[#E56810] hover:bg-[#d15e0e] text-white px-6 md:px-8 py-3 md:py-4 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/50 group"
             >
               <Download className="w-5 h-5 md:w-6 md:h-6 group-hover:animate-bounce" />

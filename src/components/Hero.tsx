@@ -35,7 +35,7 @@ export default function Hero() {
           </p>
 
           <motion.a
-            href="#download"
+            href="https://drive.google.com/file/d/1XjDnJSF9b4ShYvpt9IQK2mmVZapq_h7C/view?usp=sharing"
             whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(229, 104, 16, 0.3)' }}
             whileTap={{ scale: 0.95 }}
             animate={{
