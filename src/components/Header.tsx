@@ -27,10 +27,10 @@ export default function Header() {
         scrolled ? 'bg-white shadow-lg' : 'bg-white/90 backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollToSection('hero')}>
-          <ChefHat className="w-8 h-8 text-[#E56810]" strokeWidth={2.5} />
-          <span className="text-2xl font-black text-[#363636]">MealPal</span>
+          <ChefHat className="w-6 h-6 md:w-8 md:h-8 text-[#E56810]" strokeWidth={2.5} />
+          <span className="text-xl md:text-2xl font-black text-[#363636]">MealPal</span>
         </div>
 
         <nav className="hidden md:flex items-center gap-8">

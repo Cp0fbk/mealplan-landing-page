@@ -2,6 +2,10 @@ import { Calendar, ShoppingCart, Refrigerator, PieChart} from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import mealplanImage from '../assets/mealplan-2.png';
+import shoppinglistImage from '../assets/shoppinglist.png';
+import pantryyImage from '../assets/pantryy.png';
+import nutritionImage from '../assets/nutrition.png';
 
 const features = [
   {
@@ -36,18 +40,18 @@ function FeatureRow({ feature, index }: { feature: typeof features[0], index: nu
   const isEven = index % 2 === 0;
 
   return (
-    <div ref={ref} className={`grid lg:grid-cols-2 gap-12 items-center ${!isEven ? 'lg:flex-row-reverse' : ''}`}>
+    <div ref={ref} className={`grid grid-cols-2 gap-3 sm:gap-6 md:gap-8 lg:gap-12 items-center ${!isEven ? 'md:flex-row-reverse' : ''}`}>
       <motion.div
         initial={{ opacity: 0, x: isEven ? -50 : 50 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.8 }}
-        className={isEven ? 'lg:order-1' : 'lg:order-2'}
+        className={isEven ? 'md:order-1' : 'md:order-2'}
       >
-        <div className={`inline-block w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 shadow-lg`}>
-          <feature.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+        <div className={`inline-block w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-lg sm:rounded-xl md:rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-2 sm:mb-3 md:mb-6 shadow-lg`}>
+          <feature.icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-7 md:h-7 lg:w-8 lg:h-8 text-white" strokeWidth={2.5} />
         </div>
-        <h3 className="text-4xl font-black text-[#363636] mb-4">{feature.title}</h3>
-        <p className="text-lg text-gray-600 leading-relaxed">{feature.description}</p>
+        <h3 className="text-xs sm:text-base md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-black text-[#363636] mb-1 sm:mb-2 md:mb-4">{feature.title}</h3>
+        <p className="text-[8px] sm:text-xs md:text-sm lg:text-base xl:text-lg text-gray-600 leading-relaxed">{feature.description}</p>
       </motion.div>
 
       <motion.div
@@ -55,33 +59,19 @@ function FeatureRow({ feature, index }: { feature: typeof features[0], index: nu
         animate={isInView ? { opacity: 1, x: 0, scale: 1 } : {}}
         transition={{ duration: 0.8, delay: 0.2 }}
         whileHover={{ scale: 1.05 }}
-        className={`${isEven ? 'lg:order-2' : 'lg:order-1'} relative`}
+        className={`${isEven ? 'md:order-2' : 'md:order-1'} relative`}
       >
-        <div className="relative w-full max-w-sm mx-auto">
-          <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-3xl blur-2xl opacity-20`}></div>
-          <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-3 shadow-2xl">
-            <div className="bg-white rounded-2xl overflow-hidden">
-              <div className={`h-12 bg-gradient-to-r ${feature.gradient} flex items-center px-4`}>
-                <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
-                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
-                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
-                </div>
-              </div>
-              <div className="p-6 space-y-3">
-                <div className={`bg-gradient-to-r ${feature.gradient} opacity-20 rounded-xl h-32`}></div>
-                <div className="bg-gray-100 rounded-xl p-4 space-y-2">
-                  <div className="h-3 bg-gray-300 rounded w-full"></div>
-                  <div className="h-3 bg-gray-300 rounded w-4/5"></div>
-                  <div className="h-3 bg-gray-300 rounded w-3/5"></div>
-                </div>
-                <div className="bg-gray-100 rounded-xl p-4 space-y-2">
-                  <div className="h-3 bg-gray-300 rounded w-full"></div>
-                  <div className="h-3 bg-gray-300 rounded w-2/3"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className={`relative w-full mx-auto ${index === 0 ? 'max-w-[160px] sm:max-w-xs md:max-w-md lg:max-w-lg' : 'max-w-[120px] sm:max-w-[180px] md:max-w-[220px] lg:max-w-xs'}`}>
+          <img 
+            src={
+              index === 0 ? mealplanImage :
+              index === 1 ? shoppinglistImage :
+              index === 2 ? pantryyImage :
+              nutritionImage
+            }
+            alt={feature.title}
+            className="w-full rounded-[15px] sm:rounded-[25px] md:rounded-[35px] lg:rounded-[40px]"
+          />
         </div>
       </motion.div>
     </div>
@@ -93,24 +83,24 @@ export default function Features() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="features" className="py-20 px-6 bg-white">
+    <section id="features" className="py-8 sm:py-12 md:py-16 lg:py-20 px-4 md:px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-black text-[#363636] mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-[#363636] mb-2 sm:mb-3 md:mb-4">
             Powerful <span className="text-[#E56810]">Features</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-600 max-w-2xl mx-auto px-4">
             Everything you need to take control of your nutrition and meal planning
           </p>
         </motion.div>
 
-        <div className="space-y-32">
+        <div className="space-y-12 sm:space-y-16 md:space-y-20 lg:space-y-24 xl:space-y-32">
           {features.map((feature, index) => (
             <FeatureRow key={index} feature={feature} index={index} />
           ))}

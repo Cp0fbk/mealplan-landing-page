@@ -35,13 +35,13 @@ function PainPointCard({ point, index }: { point: typeof painPoints[0], index: n
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.2 }}
       whileHover={{ y: -10, transition: { duration: 0.3 } }}
-      className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all"
+      className="bg-white rounded-xl sm:rounded-2xl md:rounded-3xl p-2 sm:p-4 md:p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all"
     >
-      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${point.color} flex items-center justify-center mb-6 shadow-lg`}>
-        <point.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+      <div className={`w-6 h-6 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-lg sm:rounded-xl md:rounded-2xl bg-gradient-to-br ${point.color} flex items-center justify-center mb-2 sm:mb-3 md:mb-4 lg:mb-6 shadow-lg`}>
+        <point.icon className="w-3 h-3 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-white" strokeWidth={2.5} />
       </div>
-      <h3 className="text-2xl font-black text-[#363636] mb-4">{point.title}</h3>
-      <p className="text-gray-600 leading-relaxed">{point.description}</p>
+      <h3 className="text-[10px] sm:text-sm md:text-base lg:text-xl xl:text-2xl font-black text-[#363636] mb-1 sm:mb-2 md:mb-3 lg:mb-4">{point.title}</h3>
+      <p className="text-[8px] sm:text-xs md:text-sm lg:text-base text-gray-600 leading-relaxed">{point.description}</p>
     </motion.div>
   );
 }
@@ -51,24 +51,24 @@ export default function PainPoints() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="benefits" className="py-20 px-6 bg-gray-50">
+    <section id="benefits" className="py-8 sm:py-12 md:py-16 lg:py-20 px-4 md:px-6 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-black text-[#363636] mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-[#363636] mb-2 sm:mb-3 md:mb-4">
             Why You Need <span className="text-[#E56810]">MealPal</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-600 max-w-2xl mx-auto px-4">
             Transform your relationship with food and take control of your nutrition journey
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 lg:gap-8">
           {painPoints.map((point, index) => (
             <PainPointCard key={index} point={point} index={index} />
           ))}

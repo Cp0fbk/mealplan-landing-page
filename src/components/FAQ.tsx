@@ -39,14 +39,14 @@ const FAQ = ({ isVisible }: FAQProps) => {
     >
       <div className="max-w-4xl mx-auto">
         <h2
-          className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-[#363636] mb-4 transform transition-all duration-1000 ${
+          className={`text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#363636] mb-2 sm:mb-4 transform transition-all duration-1000 ${
             isVisible['faq'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
           Frequently Asked Questions
         </h2>
         <p
-          className={`text-lg text-center text-[#363636]/70 mb-12 transform transition-all duration-1000 delay-100 ${
+          className={`text-xs sm:text-sm md:text-base lg:text-lg text-center text-[#363636]/70 mb-8 sm:mb-12 transform transition-all duration-1000 delay-100 ${
             isVisible['faq'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
@@ -66,17 +66,17 @@ const FAQ = ({ isVisible }: FAQProps) => {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-orange-50/50 transition-colors"
+                className="w-full px-3 sm:px-4 md:px-6 py-3 sm:py-4 md:py-5 flex items-center justify-between text-left hover:bg-orange-50/50 transition-colors"
               >
                 <span
-                  className={`text-lg font-bold pr-4 ${
+                  className={`text-xs sm:text-sm md:text-base lg:text-lg font-bold pr-3 sm:pr-4 ${
                     openIndex === index ? 'text-[#E56810]' : 'text-[#363636]'
                   }`}
                 >
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`w-6 h-6 flex-shrink-0 transition-all duration-300 ${
+                  className={`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 transition-all duration-300 ${
                     openIndex === index
                       ? 'transform rotate-180 text-[#E56810]'
                       : 'text-[#363636]'
@@ -88,8 +88,8 @@ const FAQ = ({ isVisible }: FAQProps) => {
                   openIndex === index ? 'max-h-48' : 'max-h-0'
                 }`}
               >
-                <div className="px-6 pb-5 pt-2">
-                  <p className="text-base text-[#363636]/80 leading-relaxed">{faq.answer}</p>
+                <div className="px-3 sm:px-4 md:px-6 pb-3 sm:pb-4 md:pb-5 pt-2">
+                  <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-[#363636]/80 leading-relaxed">{faq.answer}</p>
                 </div>
               </div>
             </div>
@@ -97,11 +97,11 @@ const FAQ = ({ isVisible }: FAQProps) => {
         </div>
 
         <div
-          className={`mt-12 text-center transform transition-all duration-1000 delay-700 ${
+          className={`mt-8 sm:mt-12 text-center transform transition-all duration-1000 delay-700 ${
             isVisible['faq'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
-          <p className="text-lg text-[#363636]/70 mb-4">Still have questions?</p>
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#363636]/70 mb-2 sm:mb-4">Still have questions?</p>
           <a
             href="mailto:support@mealpal.com"
             className="inline-block text-[#E56810] font-semibold hover:text-[#d15e0e] transition-colors"
